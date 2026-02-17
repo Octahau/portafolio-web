@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none">
+  <rect width="400" height="400" rx="200" fill="url(#bg)"/>
+  <circle cx="200" cy="155" r="65" fill="url(#skin)"/>
+  <ellipse cx="200" cy="340" rx="100" ry="90" fill="url(#body)"/>
+  <circle cx="200" cy="155" r="55" fill="#F0D6B8"/>
+  <path d="M145 130 Q150 80 200 75 Q250 80 255 130 Q258 108 245 95 Q230 82 200 80 Q170 82 155 95 Q142 108 145 130Z" fill="#3B2F2F"/>
+  <circle cx="182" cy="148" r="4" fill="#2D2D2D"/>
+  <circle cx="218" cy="148" r="4" fill="#2D2D2D"/>
+  <path d="M192 168 Q200 175 208 168" stroke="#C4956A" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <rect x="148" y="215" width="104" height="120" rx="8" fill="url(#shirt)"/>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="400" y2="400">
+      <stop offset="0%" stop-color="#E0E7FF"/>
+      <stop offset="100%" stop-color="#F8FAFC"/>
+    </linearGradient>
+    <linearGradient id="skin" x1="145" y1="100" x2="255" y2="210">
+      <stop offset="0%" stop-color="#FDDCB5"/>
+      <stop offset="100%" stop-color="#F0C6A0"/>
+    </linearGradient>
+    <linearGradient id="body" x1="100" y1="250" x2="300" y2="400">
+      <stop offset="0%" stop-color="#6366F1"/>
+      <stop offset="100%" stop-color="#4F46E5"/>
+    </linearGradient>
+    <linearGradient id="shirt" x1="148" y1="215" x2="252" y2="335">
+      <stop offset="0%" stop-color="#6366F1"/>
+      <stop offset="100%" stop-color="#4F46E5"/>
+    </linearGradient>
+  </defs>
+</svg>

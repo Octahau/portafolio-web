@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+/*
+  🎨 TEMA DEL PORTAFOLIO — Light Mode
+  Usamos @theme de Tailwind CSS v4 para definir nuestros colores y fuentes personalizados.
+  Esto nos permite usar clases como bg-primary, text-secondary, font-sans, etc.
+*/
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  /* Colores principales */
+  --color-primary: #6366f1;       /* Indigo vibrante — botones, links, acentos */
+  --color-primary-dark: #4f46e5;  /* Indigo más oscuro — hover de botones */
+  --color-secondary: #8b5cf6;     /* Violeta — acentos secundarios */
+
+  /* Colores de texto */
+  --color-heading: #1e293b;       /* Slate 800 — títulos */
+  --color-body: #475569;          /* Slate 600 — texto del cuerpo */
+  --color-muted: #94a3b8;         /* Slate 400 — texto secundario */
+
+  /* Fondos */
+  --color-surface: #ffffff;       /* Fondo de tarjetas/contenedores */
+  --color-background: #f8fafc;    /* Fondo general de la página */
+  --color-nav: rgba(255, 255, 255, 0.8); /* Fondo del navbar (semitransparente para glassmorphism) */
+
+  /* Bordes */
+  --color-border: #e2e8f0;        /* Bordes sutiles */
+}
+
+/*
+  Estilos base para body.
+  Aplicamos la fuente, color de fondo y color de texto por defecto.
+*/
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-background);
+  color: var(--color-body);
+}
