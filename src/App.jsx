@@ -1,5 +1,6 @@
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import About from './components/About';
 
 /*
   📦 APP — Componente raíz de la aplicación
@@ -13,7 +14,6 @@ import Hero from './components/Hero';
 
 // Secciones que todavía no hemos construido (PASOS futuros)
 const placeholderSections = [
-  { id: 'about', title: 'About', emoji: '👤' },
   { id: 'experience', title: 'Experience', emoji: '💼' },
   { id: 'projects', title: 'Projects', emoji: '🚀' },
   { id: 'skills', title: 'Skills', emoji: '⚡' },
@@ -26,8 +26,11 @@ function App() {
       {/* Navbar fijo en la parte superior */}
       <Navbar />
 
-      {/* PASO 2: Hero Section (ya construida) */}
+      {/* PASO 2: Hero Section */}
       <Hero />
+
+      {/* PASO 3: About Section */}
+      <About />
 
       {/* Secciones placeholder — las iremos reemplazando en pasos futuros */}
       {placeholderSections.map(({ id, title, emoji }, index) => (

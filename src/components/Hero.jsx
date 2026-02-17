@@ -62,11 +62,12 @@ function useTypingAnimation(texts, typingSpeed = 100, deletingSpeed = 50, pauseT
 // ─── COMPONENTE HERO ───
 export default function Hero() {
     // Títulos que se van "escribiendo" uno por uno
+    // Títulos que se van "escribiendo" uno por uno
     const roles = [
-        'Desarrollador Frontend',
-        'Diseñador UI/UX',
-        'React Developer',
-        'Creador de Experiencias Web',
+        'Full Stack Developer',    // Tu rol principal [cite: 6]
+        'Next.js & Laravel Expert', // Tus tecnologías fuertes [cite: 7]
+        'Backend Architect',       // Tu enfoque académico [cite: 11]
+        'Software Engineer',       // Tu título en proceso [cite: 9]
     ];
 
     // Usamos el hook que creamos arriba
@@ -141,7 +142,7 @@ export default function Hero() {
                     >
                         Soy{' '}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
-                            Octavio
+                            Octavio Haurigot Posse
                         </span>
                     </motion.h1>
 
@@ -159,9 +160,9 @@ export default function Hero() {
                         variants={itemVariants}
                         className="text-body text-lg leading-relaxed mb-8 max-w-lg mx-auto lg:mx-0"
                     >
-                        Creo experiencias web modernas, rápidas y accesibles.
-                        Me apasiona transformar ideas en interfaces elegantes
-                        que hacen la diferencia.
+                        Ingeniero en Sistemas en formación y Co-Founder de DevSol.
+                        Especializado en crear soluciones escalables uniendo sistemas legacy
+                        con tecnologías modernas como Laravel y Next.js.
                     </motion.p>
 
                     {/* Botones CTA (Call to Action) */}
@@ -183,9 +184,9 @@ export default function Hero() {
                     {/* Links a Redes Sociales */}
                     <motion.div variants={itemVariants} className="flex gap-4 justify-center lg:justify-start">
                         {[
-                            { icon: Github, href: 'https://github.com', label: 'GitHub' },
-                            { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-                            { icon: Mail, href: 'mailto:octavio@email.com', label: 'Email' },
+                            { icon: Github, href: 'https://github.com/Octahau', label: 'GitHub' }, // [cite: 4]
+                            { icon: Linkedin, href: 'https://linkedin.com/in/haurigotoctavio', label: 'LinkedIn' }, // [cite: 4]
+                            { icon: Mail, href: 'mailto:haurigotposseoctavio@gmail.com', label: 'Email' }, // [cite: 3]
                         ].map(({ icon: Icon, href, label }) => (
                             <a
                                 key={label}
@@ -215,7 +216,7 @@ export default function Hero() {
                         {/* Contenedor de la foto con borde gradient */}
                         <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-surface shadow-2xl">
                             <img
-                                src="/profile.svg"
+                                src="/foto-perfil.jpeg"
                                 alt="Foto de Octavio"
                                 className="w-full h-full object-cover"
                             />
