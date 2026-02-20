@@ -51,28 +51,39 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // ─── EFECTO: Detectar qué sección está visible (Intersection Observer) ───
-  // Esto nos permite resaltar el link activo en el navbar según la sección visible.
+  // ─── EFECTO: Detectar qué sección está visible (scroll position) ───
+  // Recorre todas las secciones y elige la que está más cerca del top del viewport.
+  // Funciona mejor que IntersectionObserver para secciones al final de la página.
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          // Si la sección es visible en al menos el 50%, la marcamos como activa
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
+    const handleActiveSection = () => {
+      const scrollY = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const docHeight = document.documentElement.scrollHeight;
+
+      // Si estamos casi al fondo de la página, activamos la última sección
+      if (scrollY + windowHeight >= docHeight - 50) {
+        setActiveSection(navLinks[navLinks.length - 1].href);
+        return;
+      }
+
+      // Buscamos qué sección está más cerca del top del viewport (con offset de 150px)
+      let current = 'home';
+      for (const { href } of navLinks) {
+        const el = document.getElementById(href);
+        if (el) {
+          const top = el.offsetTop - 150;
+          if (scrollY >= top) {
+            current = href;
           }
-        });
-      },
-      { threshold: 0.5 } // 50% de la sección debe ser visible
-    );
+        }
+      }
+      setActiveSection(current);
+    };
 
-    // Observamos todas las secciones que tienen un id de nuestra lista de links
-    navLinks.forEach(({ href }) => {
-      const el = document.getElementById(href);
-      if (el) observer.observe(el);
-    });
+    window.addEventListener('scroll', handleActiveSection);
+    handleActiveSection(); // Ejecutar una vez al montar
 
-    return () => observer.disconnect();
+    return () => window.removeEventListener('scroll', handleActiveSection);
   }, []);
 
   // ─── FUNCIÓN: Scroll suave al hacer clic ───
