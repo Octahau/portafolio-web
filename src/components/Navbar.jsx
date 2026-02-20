@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 
@@ -7,6 +7,7 @@ import { Menu, X } from 'lucide-react';
   
   ¿Qué hace este componente?
   - Se queda FIJO en la parte superior de la pantalla (fixed + top).
+  - Se OCULTA al hacer scroll hacia abajo y REAPARECE al hacer scroll hacia arriba.
   - Tiene efecto "glassmorphism" (fondo semitransparente + blur).
   - Cambia su aspecto al hacer scroll (sombra + más opacidad).
   - En pantallas pequeñas muestra un menú hamburguesa.
@@ -24,10 +25,17 @@ const navLinks = [
   { label: 'Contact', href: 'contact' },
 ];
 
+// Umbral mínimo de scroll (en px) para evitar que cambios de dirección
+// muy pequeños activen/desactiven el navbar.
+const SCROLL_THRESHOLD = 10;
+
 export default function Navbar() {
   // 'scrolled' controla si el usuario ha hecho scroll hacia abajo.
   // Lo usamos para añadir sombra y más opacidad al navbar.
   const [scrolled, setScrolled] = useState(false);
+
+  // 'hidden' controla si el navbar está oculto (scroll hacia abajo).
+  const [hidden, setHidden] = useState(false);
 
   // 'mobileOpen' controla si el menú móvil está abierto o cerrado.
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -35,16 +43,38 @@ export default function Navbar() {
   // 'activeSection' guarda qué sección está actualmente visible en pantalla.
   const [activeSection, setActiveSection] = useState('home');
 
-  // ─── EFECTO: Escuchar el scroll ───
-  // useEffect se ejecuta cuando el componente se "monta" (aparece en pantalla).
-  // Añadimos un "listener" que detecta cada vez que el usuario hace scroll.
+  // Referencia para guardar la última posición de scroll.
+  const lastScrollY = useRef(0);
+
+  // ─── EFECTO: Escuchar el scroll (dirección + estilo) ───
+  // Detecta si el usuario scrollea hacia abajo (oculta el navbar)
+  // o hacia arriba (lo muestra de nuevo). También aplica sombra.
   useEffect(() => {
     const handleScroll = () => {
+      const currentY = window.scrollY;
+
       // Si scrolleamos más de 20px, marcamos 'scrolled' como true
-      setScrolled(window.scrollY > 20);
+      setScrolled(currentY > 20);
+
+      // Comprobamos la dirección del scroll con un umbral mínimo
+      if (currentY > lastScrollY.current + SCROLL_THRESHOLD) {
+        // Scroll hacia abajo → ocultar navbar
+        setHidden(true);
+        setMobileOpen(false); // cerrar menú móvil al ocultar
+      } else if (currentY < lastScrollY.current - SCROLL_THRESHOLD) {
+        // Scroll hacia arriba → mostrar navbar
+        setHidden(false);
+      }
+
+      // Si estamos en la parte superior de la página, siempre mostrar
+      if (currentY <= 10) {
+        setHidden(false);
+      }
+
+      lastScrollY.current = currentY;
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
 
     // Cleanup: cuando el componente se desmonte, quitamos el listener
     // para evitar "memory leaks" (fugas de memoria).
@@ -101,9 +131,16 @@ export default function Navbar() {
         El navbar usa "fixed" para quedarse siempre visible.
         w-full: ocupa todo el ancho.
         z-50: se pone por encima de otros elementos.
-        Usamos un div interior con max-w y mx-auto para centrar el contenido.
+        transition + duration: transición suave al ocultar/mostrar.
+        -translate-y-full: lo mueve fuera de la pantalla cuando hidden=true.
       */}
-      <nav className="fixed top-0 left-0 w-full z-50 flex justify-center px-4 pt-4">
+      <nav
+        className={`
+          fixed top-0 left-0 w-full z-50 flex justify-center px-4 pt-4
+          transition-transform duration-300 ease-in-out
+          ${hidden ? '-translate-y-full' : 'translate-y-0'}
+        `}
+      >
         <motion.div
           // Animación de entrada: el navbar aparece bajando desde arriba
           initial={{ y: -100, opacity: 0 }}
@@ -176,7 +213,7 @@ export default function Navbar() {
 
       {/* ─── MENÚ MÓVIL (aparece debajo del navbar) ─── */}
       <AnimatePresence>
-        {mobileOpen && (
+        {mobileOpen && !hidden && (
           <motion.div
             // Animaciones de entrada y salida del menú móvil
             initial={{ opacity: 0, y: -20 }}
