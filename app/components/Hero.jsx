@@ -130,7 +130,7 @@ export default function Hero() {
                         variants={itemVariants}
                         className="text-body text-lg leading-relaxed mb-8 max-w-lg mx-auto lg:mx-0"
                     >
-                        Ingeniero en Sistemas en formación y Co-Founder de DevSol.
+                        Ingeniero en Sistemas en formación y Co-Founder de DevSoul.
                         Especializado en crear soluciones escalables uniendo sistemas legacy
                         con tecnologías modernas como Laravel y Next.js.
                     </motion.p>

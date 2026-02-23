@@ -15,7 +15,7 @@ const workExperience = [
     },
     {
         title: "Co-Founder & Software Engineer",
-        company: "DevSol",
+        company: "DevSoul",
         location: "Tucumán, Argentina",
         period: "Jul 2025 - Presente",
         description: "Co-fundador de agencia de software enfocada en productos digitales. Desarrollo de la plataforma e-commerce 'Bronovios' integrando pasarelas de pago y Brevo, y arquitectura de un sistema ERP personalizado para el sector de joyería enfocado en optimización de ventas.",

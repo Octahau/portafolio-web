@@ -159,7 +159,7 @@ export default function About() {
                                     mantener sistemas legacy en Delphi mientras migro procesos clave a soluciones web con <strong className="text-heading">Laravel y Next.js</strong>.
                                 </p>
                                 <p>
-                                    También soy <strong className="text-heading">Co-Founder de DevSol</strong>, donde lidero el desarrollo de productos digitales como e-commerce y sistemas de gestión a medida,
+                                    También soy <strong className="text-heading">Co-Founder de DevSoul</strong>, donde lidero el desarrollo de productos digitales como e-commerce y sistemas de gestión a medida,
                                     enfocándome en código limpio (SOLID) y arquitecturas escalables.
                                 </p>
                             </div>
