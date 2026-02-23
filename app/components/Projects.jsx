@@ -1,16 +1,8 @@
+'use client';
+
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ExternalLink, Github, ChevronDown, ChevronUp } from 'lucide-react';
-
-/*
-  📦 PROJECTS — Sección de proyectos
-
-  ¿Qué hace este componente?
-  - Muestra los proyectos destacados en una grilla 2×2 (escritorio).
-  - Por defecto muestra 4 proyectos (2 filas × 2 columnas).
-  - Tiene un botón "Ver más" que revela un 5to proyecto.
-  - Cada tarjeta tiene categoría, título, descripción, tags y links opcionales.
-*/
 
 const projects = [
     {
@@ -55,14 +47,11 @@ const projects = [
     }
 ];
 
-// Cantidad de proyectos que se muestran por defecto (2×2 grid).
 const DEFAULT_VISIBLE = 4;
 
 export default function Projects() {
-    // 'showAll' controla si mostramos todos los proyectos o solo los primeros 4.
     const [showAll, setShowAll] = useState(false);
 
-    // Proyectos visibles según el estado.
     const visibleProjects = showAll ? projects : projects.slice(0, DEFAULT_VISIBLE);
 
     return (

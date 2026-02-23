@@ -1,29 +1,13 @@
+'use client';
+
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown, Github, Linkedin, Mail } from 'lucide-react';
 
-/*
-  🦸 HERO — La primera sección que ve el visitante
-
-  ¿Qué hace este componente?
-  - Layout de 2 columnas: texto a la izquierda, foto a la derecha.
-  - "Typing animation": el título profesional se escribe letra por letra.
-  - Botones de acción (CTA) y links a redes sociales.
-  - Responsive: en móvil se apilan verticalmente (foto arriba, texto abajo).
-  - Animaciones escalonadas con Framer Motion (cada elemento aparece con delay).
-*/
-
-// ─── TYPING ANIMATION HOOK PERSONALIZADO ───
-// Un "hook" es una función reutilizable que encapsula lógica de React.
-// Este hook recibe un array de textos y los va "escribiendo" uno por uno.
 function useTypingAnimation(texts, typingSpeed = 100, deletingSpeed = 50, pauseTime = 2000) {
-    // Estado para el texto que se muestra actualmente
     const [displayText, setDisplayText] = useState('');
-    // Índice del texto actual en el array
     const [textIndex, setTextIndex] = useState(0);
-    // Índice del carácter actual que estamos mostrando
     const [charIndex, setCharIndex] = useState(0);
-    // ¿Estamos borrando o escribiendo?
     const [isDeleting, setIsDeleting] = useState(false);
 
     useEffect(() => {
@@ -31,28 +15,23 @@ function useTypingAnimation(texts, typingSpeed = 100, deletingSpeed = 50, pauseT
 
         const timeout = setTimeout(() => {
             if (!isDeleting) {
-                // ESCRIBIENDO: añadimos un carácter más
                 setDisplayText(currentText.substring(0, charIndex + 1));
                 setCharIndex((prev) => prev + 1);
 
-                // Si terminamos de escribir toda la palabra, esperamos y empezamos a borrar
                 if (charIndex + 1 === currentText.length) {
                     setTimeout(() => setIsDeleting(true), pauseTime);
                 }
             } else {
-                // BORRANDO: quitamos un carácter
                 setDisplayText(currentText.substring(0, charIndex - 1));
                 setCharIndex((prev) => prev - 1);
 
-                // Si borramos todo, pasamos al siguiente texto
                 if (charIndex - 1 === 0) {
                     setIsDeleting(false);
-                    setTextIndex((prev) => (prev + 1) % texts.length); // Vuelve al inicio con %
+                    setTextIndex((prev) => (prev + 1) % texts.length);
                 }
             }
         }, isDeleting ? deletingSpeed : typingSpeed);
 
-        // Limpiamos el timeout cuando el componente se actualiza
         return () => clearTimeout(timeout);
     }, [charIndex, isDeleting, textIndex, texts, typingSpeed, deletingSpeed, pauseTime]);
 
@@ -61,21 +40,14 @@ function useTypingAnimation(texts, typingSpeed = 100, deletingSpeed = 50, pauseT
 
 // ─── COMPONENTE HERO ───
 export default function Hero() {
-    // Títulos que se van "escribiendo" uno por uno
-    // Títulos que se van "escribiendo" uno por uno
     const roles = [
-        'Full Stack Developer',    // Tu rol principal [cite: 6]
-        'Next.js & Laravel Expert', // Tus tecnologías fuertes [cite: 7]
-        'Backend Architect',       // Tu enfoque académico [cite: 11]
-        'Software Engineer',       // Tu título en proceso [cite: 9]
+        'Full Stack Developer',
+        'Next.js & Laravel Expert',
+        'Backend Architect',
+        'Software Engineer',
     ];
-
-    // Usamos el hook que creamos arriba
     const typedText = useTypingAnimation(roles);
 
-    // Variantes de animación para Framer Motion.
-    // Esto nos permite animar varios elementos con un "delay" escalonado.
-    // El "container" controla cuándo empiezan sus hijos a aparecer.
     const containerVariants = {
         hidden: { opacity: 0 },
         visible: {
@@ -112,9 +84,7 @@ export default function Hero() {
             id="home"
             className="min-h-screen flex items-center justify-center px-6 pt-24 pb-16 bg-background relative overflow-hidden"
         >
-            {/* ─── Círculos decorativos de fondo ───
-          Son círculos difuminados que dan profundidad visual.
-          absolute + blur = solo decoración, no interactúan con el contenido */}
+
             <div className="absolute top-20 left-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
             <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/5 rounded-full blur-3xl" />
 
@@ -184,9 +154,9 @@ export default function Hero() {
                     {/* Links a Redes Sociales */}
                     <motion.div variants={itemVariants} className="flex gap-4 justify-center lg:justify-start">
                         {[
-                            { icon: Github, href: 'https://github.com/Octahau', label: 'GitHub' }, // [cite: 4]
-                            { icon: Linkedin, href: 'https://linkedin.com/in/haurigotoctavio', label: 'LinkedIn' }, // [cite: 4]
-                            { icon: Mail, href: 'mailto:haurigotposseoctavio@gmail.com', label: 'Email' }, // [cite: 3]
+                            { icon: Github, href: 'https://github.com/Octahau', label: 'GitHub' },
+                            { icon: Linkedin, href: 'https://linkedin.com/in/haurigotoctavio', label: 'LinkedIn' },
+                            { icon: Mail, href: 'mailto:haurigotposseoctavio@gmail.com', label: 'Email' },
                         ].map(({ icon: Icon, href, label }) => (
                             <a
                                 key={label}

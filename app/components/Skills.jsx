@@ -1,42 +1,39 @@
+'use client';
+
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Code, Layout, Server, Wrench } from 'lucide-react';
 
-// ─── DATOS DE SKILLS POR CATEGORÍA ───
-// Cada skill tiene nombre, subcategoría (badge), y porcentaje de dominio.
 const skillData = {
     programming: [
-        { name: 'JavaScript', category: 'Language', level: 90 },
-        { name: 'TypeScript', category: 'Language', level: 85 },
+        { name: 'JavaScript', category: 'Language', level: 85 },
+        { name: 'TypeScript', category: 'Language', level: 75 },
         { name: 'PHP', category: 'Language', level: 85 },
         { name: 'SQL', category: 'Language', level: 80 },
-        { name: 'Pascal', category: 'Language', level: 60 },
+        { name: 'Pascal (Delphi)', category: 'Language', level: 65 },
     ],
     frontend: [
         { name: 'React', category: 'Library', level: 85 },
-        { name: 'Next.js', category: 'Framework', level: 90 },
-        { name: 'Tailwind CSS', category: 'Styling', level: 85 },
-        { name: 'HTML/CSS', category: 'Core', level: 90 },
-        { name: 'Framer Motion', category: 'Animation', level: 70 },
+        { name: 'Next.js', category: 'Framework', level: 80 },
+        { name: 'HTML / CSS', category: 'Core', level: 90 },
+        { name: 'Tailwind CSS', category: 'Styling', level: 60 },
+        { name: 'Framer Motion', category: 'Animation', level: 50 },
     ],
     backend: [
-        { name: 'Laravel', category: 'Framework', level: 90 },
-        { name: 'REST APIs', category: 'Architecture', level: 85 },
-        { name: 'Prisma', category: 'ORM', level: 75 },
-        { name: 'SOLID', category: 'Principles', level: 80 },
-        { name: 'Clean Code', category: 'Principles', level: 80 },
+        { name: 'Laravel', category: 'Framework', level: 70 },
+        { name: 'PostgreSQL', category: 'Database', level: 70 },
+        { name: 'MySQL', category: 'Database', level: 70 },
+        { name: 'REST APIs', category: 'Architecture', level: 80 },
     ],
     tools: [
         { name: 'Git', category: 'Version Control', level: 85 },
         { name: 'n8n', category: 'Automation', level: 80 },
-        { name: 'MySQL', category: 'Database', level: 85 },
-        { name: 'PostgreSQL', category: 'Database', level: 80 },
-        { name: 'Composer', category: 'Package Manager', level: 75 },
+        { name: 'SOLID & Clean Code', category: 'Practices', level: 85 },
+        { name: 'Composer / npm', category: 'Package Manager', level: 80 },
         { name: 'VS Code', category: 'Editor', level: 90 },
     ],
 };
 
-// Tabs con su id, label e icono
 const tabs = [
     { id: 'programming', label: 'Programming', icon: Code },
     { id: 'frontend', label: 'Frontend', icon: Layout },

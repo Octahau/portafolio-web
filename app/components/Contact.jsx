@@ -1,21 +1,11 @@
+'use client';
+
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Send, Mail, Linkedin, Github, MapPin, MessageSquare, User, AtSign } from 'lucide-react';
 
-/*
-  📬 CONTACT — Sección de contacto con formulario funcional.
-
-  Para que los emails lleguen a tu correo, usamos Web3Forms (gratis, sin backend).
-  
-  SETUP (solo una vez):
-  1. Andá a https://web3forms.com/
-  2. Poné tu email (haurigotposseoctavio@gmail.com)
-  3. Te van a mandar un Access Key por mail
-  4. Reemplazá 'TU_ACCESS_KEY_AQUI' en la línea de abajo con ese key
-*/
 const WEB3FORMS_KEY = '34a5dfcc-6ef6-4dcc-b572-000bcf291463';
 
-// Tus redes sociales para la columna izquierda
 const socialLinks = [
     {
         icon: Linkedin,
@@ -47,21 +37,17 @@ const socialLinks = [
 ];
 
 export default function Contact() {
-    // Estado del formulario
     const [formData, setFormData] = useState({
         name: '',
         email: '',
         subject: '',
         message: '',
     });
-    const [status, setStatus] = useState('idle'); // 'idle' | 'sending' | 'success' | 'error'
-
-    // Actualizar campos del formulario
+    const [status, setStatus] = useState('idle');
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    // Enviar formulario via Web3Forms
     const handleSubmit = async (e) => {
         e.preventDefault();
         setStatus('sending');
@@ -275,12 +261,12 @@ export default function Contact() {
                                 {/* Mensajes de feedback */}
                                 {status === 'success' && (
                                     <p className="text-center text-sm text-emerald-600 font-medium">
-                                        ✅ ¡Mensaje enviado! Te respondo pronto.
+                                        ¡Mensaje enviado! Te respondo pronto.
                                     </p>
                                 )}
                                 {status === 'error' && (
                                     <p className="text-center text-sm text-red-500 font-medium">
-                                        ❌ Error al enviar. Intentá de nuevo o escribime directo a mi email.
+                                        Error al enviar. Intentá de nuevo o escribime directo a mi email.
                                     </p>
                                 )}
                             </form>

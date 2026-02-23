@@ -1,3 +1,5 @@
+'use client';
+
 import { Github, Linkedin, Mail, Heart, MapPin, CalendarPlus } from 'lucide-react';
 
 const quickLinks = [

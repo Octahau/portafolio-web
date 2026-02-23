@@ -1,22 +1,8 @@
+'use client';
+
 import { motion } from 'framer-motion';
 import { MapPin, GraduationCap, Briefcase, Calendar, Code2, Download } from 'lucide-react';
 
-/*
-  👤 ABOUT — Sección "Sobre mí"
-
-  ¿Qué hace este componente?
-  - Muestra una presentación personal con foto y datos clave.
-  - Los "stats" (tarjetas de datos clave) muestran info rápida: ubicación, carrera, etc.
-  - Layout: foto a la izquierda, texto + stats a la derecha (en desktop).
-  - Animación de entrada: los elementos aparecen al hacer scroll (whileInView).
-
-  💡 Concepto nuevo: "whileInView"
-  A diferencia del Hero (que se anima al cargar), aquí usamos whileInView.
-  Esto significa que las animaciones se disparan CUANDO el usuario hace scroll
-  y la sección se vuelve visible. Así no se desperdician animaciones que nadie ve.
-*/
-
-// Datos personales extraídos del CV
 const personalInfo = {
     name: 'Octavio Haurigot Posse',
     location: 'Tucumán, Argentina',
@@ -24,10 +10,9 @@ const personalInfo = {
     degree: 'Ingeniería en Sistemas de Información',
     year: '4to año (en curso)',
     email: 'haurigotposseoctavio@gmail.com',
-    phone: '+54 9 381 531-7795', // Formato internacional
+    phone: '+54 9 381 531-7795',
 };
 
-// Tarjetas de datos rápidos — cada una con un icono, label y valor.
 const stats = [
     {
         icon: MapPin,
@@ -59,14 +44,16 @@ const stats = [
     },
 ];
 
-// Tecnologías principales — las que aparecen como "badges" debajo de la bio
 const techStack = [
-    'Laravel', 'Next.js', 'React', 'TypeScript',
-    'PHP', 'PostgreSQL', 'MySQL', 'Git', 'n8n'
+    'Next.js',
+    'Laravel',
+    'React',
+    'TypeScript',
+    'PostgreSQL',
+    'n8n'
 ];
 
 export default function About() {
-    // Variantes de animación reutilizables
     const fadeInUp = {
         hidden: { opacity: 0, y: 40 },
         visible: {
@@ -142,7 +129,7 @@ export default function About() {
                                     <Code2 size={18} className="text-primary" />
                                     <div>
                                         <p className="text-xs text-muted">Experiencia</p>
-                                        <p className="text-sm font-semibold text-heading">+1 año</p>
+                                        <p className="text-sm font-semibold text-heading">+2 año</p>
                                     </div>
                                 </div>
                             </motion.div>
