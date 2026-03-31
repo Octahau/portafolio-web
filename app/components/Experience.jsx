@@ -9,7 +9,7 @@ const workExperience = [
         title: "IT Support & Software Developer",
         company: "Albertus",
         location: "Yerba Buena, Tucumán, Argentina",
-        period: "Mar 2022 - Presente",
+        period: "Mar 2024 - Presente",
         description: "Migración y modernización de procesos críticos de negocio mediante APIs RESTful robustas en Laravel y Next.js. Administración de bases de datos relacionales (MySQL) garantizando la integridad transaccional del sistema ERP legacy central (Delphi 7). Mantenimiento de infraestructura y soporte operativo.",
         tags: ["Laravel", "MySQL", "Next.js", "Legacy Systems", "DB Admin"],
     },
@@ -25,7 +25,7 @@ const workExperience = [
         title: "Software Engineer (Backend Focus)",
         company: "Freelance",
         location: "Remoto / Tucumán",
-        period: "Ago 2023 - Presente",
+        period: "Ago 2024 - Presente",
         description: "Diseño y desarrollo de Sistemas de Gestión (ERPs) para sectores inmobiliario, automotriz y salud. Construcción del motor financiero con Laravel para el cálculo dinámico de cuotas e intereses (Cron Jobs), aplicando estrictamente Arquitectura en Capas, Inyección de Dependencias y principios SOLID.",
         tags: ["Laravel", "React", "SOLID", "Cron Jobs", "Clean Code"],
     }
