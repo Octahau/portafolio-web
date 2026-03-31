@@ -6,38 +6,39 @@ import { Code, Layout, Server, Wrench } from 'lucide-react';
 
 const skillData = {
     programming: [
+        { name: 'PHP', category: 'Language', level: 90 },
         { name: 'JavaScript', category: 'Language', level: 85 },
-        { name: 'TypeScript', category: 'Language', level: 75 },
-        { name: 'PHP', category: 'Language', level: 85 },
-        { name: 'SQL', category: 'Language', level: 80 },
-        { name: 'Pascal (Delphi)', category: 'Language', level: 65 },
-    ],
-    frontend: [
-        { name: 'React', category: 'Library', level: 85 },
-        { name: 'Next.js', category: 'Framework', level: 80 },
-        { name: 'HTML / CSS', category: 'Core', level: 90 },
-        { name: 'Tailwind CSS', category: 'Styling', level: 60 },
-        { name: 'Framer Motion', category: 'Animation', level: 50 },
+        { name: 'TypeScript', category: 'Language', level: 80 },
+        { name: 'SQL', category: 'Query Language', level: 85 },
+        { name: 'Pascal (Delphi)', category: 'Legacy', level: 65 },
     ],
     backend: [
-        { name: 'Laravel', category: 'Framework', level: 70 },
-        { name: 'PostgreSQL', category: 'Database', level: 70 },
-        { name: 'MySQL', category: 'Database', level: 70 },
-        { name: 'REST APIs', category: 'Architecture', level: 80 },
+        { name: 'Laravel', category: 'Framework', level: 90 },
+        { name: 'RESTful APIs', category: 'Architecture', level: 90 },
+        { name: 'PostgreSQL', category: 'Database', level: 85 },
+        { name: 'MySQL', category: 'Database', level: 85 },
+        { name: 'NestJS', category: 'Framework', level: 75 },
+    ],
+    frontend: [
+        { name: 'Next.js', category: 'Framework', level: 80 },
+        { name: 'React', category: 'Library', level: 80 },
+        { name: 'HTML / CSS', category: 'Core', level: 85 },
+        { name: 'Tailwind CSS', category: 'Styling', level: 75 },
+        { name: 'Framer Motion', category: 'Animation', level: 50 },
     ],
     tools: [
-        { name: 'Git', category: 'Version Control', level: 85 },
-        { name: 'n8n', category: 'Automation', level: 80 },
-        { name: 'SOLID & Clean Code', category: 'Practices', level: 85 },
-        { name: 'Composer / npm', category: 'Package Manager', level: 80 },
-        { name: 'VS Code', category: 'Editor', level: 90 },
+        { name: 'SOLID & Clean Code', category: 'Practices', level: 90 },
+        { name: 'Git & GitHub', category: 'Version Control', level: 85 },
+        { name: 'n8n / Automations', category: 'Workflows', level: 85 },
+        { name: 'Docker & CI/CD', category: 'DevOps', level: 75 },
+        { name: 'Composer / npm', category: 'Package Manager', level: 85 },
     ],
 };
 
 const tabs = [
     { id: 'programming', label: 'Programming', icon: Code },
+    { id: 'backend', label: 'Backend', icon: Server }, // Moví Backend antes que Frontend
     { id: 'frontend', label: 'Frontend', icon: Layout },
-    { id: 'backend', label: 'Backend', icon: Server },
     { id: 'tools', label: 'Tools', icon: Wrench },
 ];
 
@@ -55,11 +56,14 @@ export default function Skills() {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-12"
                 >
+                    <span className="inline-block px-4 py-1.5 bg-primary/10 text-primary text-sm font-medium rounded-full mb-4">
+                        Stack Tecnológico
+                    </span>
                     <h2 className="text-3xl sm:text-4xl font-bold text-heading mb-4">
-                        Skills
+                        Skills & Herramientas
                     </h2>
                     <p className="text-muted max-w-2xl mx-auto">
-                        Technical expertise and proficiency across different domains of software development.
+                        Dominio técnico enfocado en la construcción de arquitecturas backend robustas, bases de datos relacionales y soluciones Full Stack.
                     </p>
                 </motion.div>
 

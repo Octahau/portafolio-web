@@ -31,26 +31,27 @@ const stats = [
     {
         icon: Briefcase,
         label: 'Experiencia',
-        value: '+2 Años (Albertus & Freelance)',
+        value: '2 Años (Profesional)',
         color: 'text-violet-500',
         bg: 'bg-violet-50',
     },
     {
         icon: Calendar,
         label: 'Disponibilidad',
-        value: 'Freelance & Part-time',
+        value: 'Remoto / Full-time',
         color: 'text-amber-500',
         bg: 'bg-amber-50',
     },
 ];
 
+// Reordenado estratégicamente: Backend y DBs primero.
 const techStack = [
-    'Next.js',
-    'Laravel',
-    'React',
+    'PHP & Laravel',
+    'MySQL / PostgreSQL',
+    'Next.js & React',
+    'NestJS',
     'TypeScript',
-    'PostgreSQL',
-    'n8n'
+    'n8n & Docker'
 ];
 
 export default function About() {
@@ -85,13 +86,13 @@ export default function About() {
                 >
                     {/* Badge superior */}
                     <span className="inline-block px-4 py-1.5 bg-primary/10 text-primary text-sm font-medium rounded-full mb-4">
-                        Sobre mí
+                        Perfil Profesional
                     </span>
                     <h2 className="text-3xl sm:text-4xl font-bold text-heading mb-4">
-                        Conóceme un poco más
+                        Software Engineer | Backend & Full Stack
                     </h2>
                     <p className="text-muted max-w-2xl mx-auto">
-                        Estudiante de ingeniería, desarrollador full-stack y emprendedor tecnológico.
+                        Especializado en la arquitectura de sistemas transaccionales, diseño de APIs robustas y modernización de plataformas con Laravel y el ecosistema JavaScript.
                     </p>
                 </motion.div>
 
@@ -119,7 +120,7 @@ export default function About() {
                                 />
                             </div>
 
-                            {/* Badge de experiencia flotante */}
+                            {/* Badge de experiencia flotante (Actualizado a 4 años) */}
                             <motion.div
                                 animate={{ y: [0, -8, 0] }}
                                 transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
@@ -129,7 +130,7 @@ export default function About() {
                                     <Code2 size={18} className="text-primary" />
                                     <div>
                                         <p className="text-xs text-muted">Experiencia</p>
-                                        <p className="text-sm font-semibold text-heading">+2 año</p>
+                                        <p className="text-sm font-semibold text-heading">4 Años</p>
                                     </div>
                                 </div>
                             </motion.div>
@@ -151,16 +152,13 @@ export default function About() {
                             </h3>
                             <div className="space-y-4 text-body leading-relaxed">
                                 <p>
-                                    Soy estudiante avanzado de <strong className="text-heading">Ingeniería en Sistemas</strong> apasionado por la arquitectura de software.
-                                    Mi enfoque combina la solidez de la ingeniería con la agilidad del desarrollo web moderno.
+                                    Soy estudiante avanzado de <strong className="text-heading">Ingeniería en Sistemas</strong> y un apasionado por la arquitectura de software. Mi valor principal radica en resolver lógicas de negocio complejas y transformarlas en código limpio, mantenible y escalable.
                                 </p>
                                 <p>
-                                    Actualmente me desempeño como <strong className="text-heading">IT Support & Software Developer</strong> en Albertus, donde tengo el desafío único de
-                                    mantener sistemas legacy en Delphi mientras migro procesos clave a soluciones web con <strong className="text-heading">Laravel y Next.js</strong>.
+                                    Actualmente me desempeño en Albertus, donde tengo el desafío de <strong className="text-heading">modernizar bases de datos legacy</strong> y migrar procesos críticos hacia soluciones web robustas utilizando <strong className="text-heading">Laravel</strong>. Estoy acostumbrado a garantizar la integridad de los datos en entornos de producción.
                                 </p>
                                 <p>
-                                    También soy <strong className="text-heading">Co-Founder de DevSoul</strong>, donde lidero el desarrollo de productos digitales como e-commerce y sistemas de gestión a medida,
-                                    enfocándome en código limpio (SOLID) y arquitecturas escalables.
+                                    Como <strong className="text-heading">Co-Founder de DevSoul</strong>, lidero la ingeniería de sistemas transaccionales (como ERPs financieros) y plataformas e-commerce. Utilizo herramientas como Next.js y NestJS para integraciones modernas, apoyándome siempre en <strong className="text-heading">principios SOLID, Arquitectura en Capas y orquestación de flujos automatizados</strong>.
                                 </p>
                             </div>
                         </motion.div>
@@ -198,7 +196,7 @@ export default function About() {
                             viewport={{ once: true, amount: 0.3 }}
                             variants={fadeInUp}
                         >
-                            <p className="text-sm text-muted mb-3 uppercase tracking-wider">Tech Stack</p>
+                            <p className="text-sm text-muted mb-3 uppercase tracking-wider">Core Tech Stack</p>
                             <div className="flex flex-wrap gap-2">
                                 {techStack.map((tech) => (
                                     <span
@@ -224,7 +222,7 @@ export default function About() {
                                 className="inline-flex items-center gap-2 px-6 py-3 bg-primary hover:bg-primary-dark text-white font-medium rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-primary/25 hover:-translate-y-0.5"
                             >
                                 <Download size={18} />
-                                Descargar CV
+                                Descargar CV en Inglés
                             </a>
                         </motion.div>
                     </div>
