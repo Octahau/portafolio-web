@@ -6,47 +6,46 @@ import { ExternalLink, Github, ChevronDown, ChevronUp } from 'lucide-react';
 
 const projects = [
     {
-        title: 'Sistema de Gestión Inmobiliaria',
-        category: 'Web App',
-        description: 'Sistema de gestión para administración de alquileres con contratos, cuotas y propiedades. Frontend en Next.js y backend en Laravel con MySQL.',
-        tags: ['Laravel', 'Next.js', 'MySQL', 'REST API'],
+        title: 'Sistema de Gestión Inmobiliaria y Financiera',
+        category: 'ERP & Automatización',
+        description: 'Plataforma integral para administración de contratos y cobros. Automatiza el cálculo de cuotas mensuales integrando APIs externas (índices oficiales IPC/ICL) y genera boletas en PDF de forma dinámica.',
+        tags: ['Next.js', 'Laravel', 'MySQL', 'API Integration'],
         github: null,
         live: null,
     },
     {
-        title: 'Bronovios',
-        category: 'E-commerce',
-        description: 'Plataforma e-commerce para productos digitales con integración de pasarelas de pago y Brevo para email marketing automatizado.',
-        tags: ['Next.js', 'PostgreSQL', 'Payments', 'Brevo'],
+        title: 'AI Personal Finance Tracker',
+        category: 'Automatización & IA',
+        description: 'Sistema asíncrono de seguimiento financiero vía Telegram. Diseñado con n8n para orquestar eventos y la API de Gemini (LLMs) para analizar y categorizar transacciones no estructuradas en tiempo real.',
+        tags: ['n8n', 'Gemini API', 'Workflows', 'Google Sheets'],
         github: null,
         live: null,
     },
     {
-        title: 'AI Finance Tracker',
-        category: 'Automation',
-        description: 'Sistema de seguimiento de gastos vía Telegram usando n8n y Gemini AI para categorizar transacciones automáticamente.',
-        tags: ['n8n', 'Gemini AI', 'Telegram', 'Google Sheets'],
+        title: 'CRM Retail & RRHH (Bronovios)',
+        category: 'CRM',
+        description: 'Sistema integral para la atención al cliente y gestión operativa. Integra módulos para la promoción de asesorías comerciales 1-a-1, seguimiento de perfiles mensuales y automatización de marketing con Brevo.',
+        tags: ['Next.js', 'PostgreSQL', 'Brevo', 'CRM'],
         github: null,
         live: null,
     },
     {
         title: 'Symmetria - Gestión Kinesiológica',
-        category: 'Web App',
-        description: 'Sistema integral de gestión de turnos e historias clínicas desarrollado a medida para el sector de kinesiología. Cuenta con una API RESTful escalable en Laravel y una interfaz interactiva en React, aplicando principios de Clean Code.',
-        tags: ['Laravel', 'React', 'REST API', 'Clean Code'],
+        category: 'Web App & Analítica',
+        description: 'Sistema para digitalizar la atención médica y administrativa. Incluye la gestión de agendas cruzadas y un dashboard analítico interactivo con métricas de ingresos y rendimiento del consultorio.',
+        tags: ['React', 'Laravel', 'PostgreSQL', 'Data Analytics'],
         github: null,
         live: null,
     },
     {
-        title: 'Autos VIP Tucumán - Concesionaria',
-        category: 'Web App',
-        description: 'Plataforma administrativa a medida para el sector automotriz, enfocada en el control ágil del inventario de vehículos, gestión de clientes y seguimiento de ventas. Desarrollada integrando React y Laravel, con Arquitectura en Capas y principios SOLID para asegurar alta mantenibilidad.',
+        title: 'Autos VIP - Dashboard de Concesionaria',
+        category: 'ERP / Web App',
+        description: 'Plataforma administrativa para gestionar inventarios, consignaciones y flujos de ventas. Cuenta con un panel interactivo con métricas en tiempo real comparando ventas vs. gastos para potenciar la toma de decisiones.',
         tags: ['Laravel', 'React', 'SOLID', 'MySQL'],
         github: null,
         live: null,
     }
 ];
-
 const DEFAULT_VISIBLE = 4;
 
 export default function Projects() {

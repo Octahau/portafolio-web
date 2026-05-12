@@ -6,7 +6,7 @@ import { MapPin, GraduationCap, Briefcase, Calendar, Code2, Download } from 'luc
 const personalInfo = {
     name: 'Octavio Haurigot Posse',
     location: 'Tucumán, Argentina',
-    university: 'Universidad Tecnológica Nacional (UTN FRT)',
+    university: 'Universidad Tecnológica Nacional (UTN - FRT)',
     degree: 'Ingeniería en Sistemas de Información',
     year: '4to año (en curso)',
     email: 'haurigotposseoctavio@gmail.com',
@@ -31,7 +31,7 @@ const stats = [
     {
         icon: Briefcase,
         label: 'Experiencia',
-        value: '2 Años (Profesional)',
+        value: '+2 Años (Profesional)',
         color: 'text-violet-500',
         bg: 'bg-violet-50',
     },
@@ -44,7 +44,7 @@ const stats = [
     },
 ];
 
-// Reordenado estratégicamente: Backend y DBs primero.
+// Reordenado estratégicamente: Backend, DBs y Automatización primero.
 const techStack = [
     'PHP & Laravel',
     'MySQL / PostgreSQL',

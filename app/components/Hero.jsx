@@ -40,10 +40,11 @@ function useTypingAnimation(texts, typingSpeed = 100, deletingSpeed = 50, pauseT
 
 // ─── COMPONENTE HERO ───
 export default function Hero() {
+    // 💡 Roles actualizados estratégicamente para la búsqueda laboral
     const roles = [
-        'Full Stack Developer',
-        'Next.js & Laravel Expert',
-        'Backend Architect',
+        'Full-Stack Developer',
+        'Especialista en Automatización & IA',
+        'Desarrollador de ERPs y APIs',
         'Software Engineer',
     ];
     const typedText = useTypingAnimation(roles);
@@ -53,13 +54,12 @@ export default function Hero() {
         visible: {
             opacity: 1,
             transition: {
-                staggerChildren: 0.15, // Cada hijo aparece 0.15s después del anterior
-                delayChildren: 0.3,     // Esperamos 0.3s antes de empezar
+                staggerChildren: 0.15,
+                delayChildren: 0.3,
             },
         },
     };
 
-    // Cada "hijo" aparece subiendo desde abajo con un fade-in.
     const itemVariants = {
         hidden: { opacity: 0, y: 30 },
         visible: {
@@ -69,7 +69,6 @@ export default function Hero() {
         },
     };
 
-    // Animación de la foto: aparece escalando desde 0
     const imageVariants = {
         hidden: { opacity: 0, scale: 0.8 },
         visible: {
@@ -116,26 +115,23 @@ export default function Hero() {
                         </span>
                     </motion.h1>
 
-                    {/* Typing animation — El texto que se escribe solo */}
+                    {/* Typing animation */}
                     <motion.div variants={itemVariants} className="mb-6 h-10">
                         <span className="text-xl sm:text-2xl text-body font-medium">
                             {typedText}
                         </span>
-                        {/* Cursor parpadeante — simula el cursor de una terminal */}
                         <span className="inline-block w-0.5 h-6 bg-primary ml-1 animate-pulse" />
                     </motion.div>
 
-                    {/* Descripción breve */}
+                    {/* 💡 Descripción breve ajustada al perfil comercial/IA */}
                     <motion.p
                         variants={itemVariants}
                         className="text-body text-lg leading-relaxed mb-8 max-w-lg mx-auto lg:mx-0"
                     >
-                        Ingeniero en Sistemas en formación y Co-Founder de DevSoul.
-                        Especializado en crear soluciones escalables uniendo sistemas legacy
-                        con tecnologías modernas como Laravel y Next.js.
+                        Estudiante avanzado de Ingeniería en Sistemas (UTN). Especializado en optimizar procesos comerciales mediante soluciones B2B a medida, integración de APIs y automatización de flujos de trabajo.
                     </motion.p>
 
-                    {/* Botones CTA (Call to Action) */}
+                    {/* Botones CTA */}
                     <motion.div variants={itemVariants} className="flex flex-wrap gap-4 justify-center lg:justify-start mb-8">
                         <a
                             href="#projects"
@@ -180,10 +176,8 @@ export default function Hero() {
                     className="flex justify-center order-1 lg:order-2"
                 >
                     <div className="relative">
-                        {/* Anillo decorativo detrás de la foto */}
                         <div className="absolute inset-0 bg-gradient-to-br from-primary to-secondary rounded-full blur-2xl opacity-20 scale-110" />
 
-                        {/* Contenedor de la foto con borde gradient */}
                         <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-surface shadow-2xl">
                             <img
                                 src="/foto-perfil.jpeg"
@@ -192,14 +186,13 @@ export default function Hero() {
                             />
                         </div>
 
-                        {/* Badge decorativo flotante — da dinamismo */}
                         <motion.div
                             animate={{ y: [0, -10, 0] }}
                             transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
                             className="absolute -bottom-2 -right-2 bg-surface border border-border rounded-2xl px-4 py-2 shadow-lg"
                         >
                             <span className="text-sm font-medium text-heading">
-                                💻 Disponible para trabajar
+                                🚀 Listo para nuevos desafíos
                             </span>
                         </motion.div>
                     </div>

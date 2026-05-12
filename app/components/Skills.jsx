@@ -6,40 +6,40 @@ import { Code, Layout, Server, Wrench } from 'lucide-react';
 
 const skillData = {
     programming: [
-        { name: 'PHP', category: 'Language', level: 90 },
-        { name: 'JavaScript', category: 'Language', level: 85 },
-        { name: 'TypeScript', category: 'Language', level: 80 },
-        { name: 'SQL', category: 'Query Language', level: 85 },
+        { name: 'PHP', category: 'Lenguaje', level: 90 },
+        { name: 'JavaScript', category: 'Lenguaje', level: 85 },
+        { name: 'TypeScript', category: 'Lenguaje', level: 80 },
+        { name: 'SQL', category: 'Lenguaje de Consulta', level: 85 },
         { name: 'Pascal (Delphi)', category: 'Legacy', level: 65 },
     ],
     backend: [
         { name: 'Laravel', category: 'Framework', level: 90 },
-        { name: 'RESTful APIs', category: 'Architecture', level: 90 },
-        { name: 'PostgreSQL', category: 'Database', level: 85 },
-        { name: 'MySQL', category: 'Database', level: 85 },
+        { name: 'RESTful APIs', category: 'Arquitectura', level: 90 },
+        { name: 'PostgreSQL', category: 'Base de Datos', level: 85 },
+        { name: 'MySQL', category: 'Base de Datos', level: 85 },
         { name: 'NestJS', category: 'Framework', level: 75 },
     ],
     frontend: [
         { name: 'Next.js', category: 'Framework', level: 80 },
-        { name: 'React', category: 'Library', level: 80 },
+        { name: 'React', category: 'Librería', level: 80 },
         { name: 'HTML / CSS', category: 'Core', level: 85 },
-        { name: 'Tailwind CSS', category: 'Styling', level: 75 },
-        { name: 'Framer Motion', category: 'Animation', level: 50 },
+        { name: 'Tailwind CSS', category: 'Estilos', level: 75 },
+        { name: 'Framer Motion', category: 'Animaciones', level: 50 },
     ],
     tools: [
-        { name: 'SOLID & Clean Code', category: 'Practices', level: 90 },
-        { name: 'Git & GitHub', category: 'Version Control', level: 85 },
-        { name: 'n8n / Automations', category: 'Workflows', level: 85 },
+        { name: 'SOLID & Clean Code', category: 'Prácticas', level: 90 },
+        { name: 'n8n / Automatizaciones', category: 'Workflows', level: 80 },
+        { name: 'Git & GitHub', category: 'Control de Versiones', level: 85 },
         { name: 'Docker & CI/CD', category: 'DevOps', level: 75 },
-        { name: 'Composer / npm', category: 'Package Manager', level: 85 },
+        { name: 'Composer / npm', category: 'Gestores de Paquetes', level: 85 },
     ],
 };
 
 const tabs = [
-    { id: 'programming', label: 'Programming', icon: Code },
-    { id: 'backend', label: 'Backend', icon: Server }, // Moví Backend antes que Frontend
+    { id: 'programming', label: 'Programación', icon: Code },
+    { id: 'backend', label: 'Backend', icon: Server },
     { id: 'frontend', label: 'Frontend', icon: Layout },
-    { id: 'tools', label: 'Tools', icon: Wrench },
+    { id: 'tools', label: 'Herramientas', icon: Wrench },
 ];
 
 export default function Skills() {

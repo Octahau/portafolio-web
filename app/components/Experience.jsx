@@ -6,39 +6,39 @@ import { Briefcase, GraduationCap, Award } from "lucide-react";
 
 const workExperience = [
     {
-        title: "IT Support & Software Developer",
-        company: "Albertus",
-        location: "Yerba Buena, Tucumán, Argentina",
-        period: "Mar 2024 - Presente",
-        description: "Migración y modernización de procesos críticos de negocio mediante APIs RESTful robustas en Laravel y Next.js. Administración de bases de datos relacionales (MySQL) garantizando la integridad transaccional del sistema ERP legacy central (Delphi 7). Mantenimiento de infraestructura y soporte operativo.",
-        tags: ["Laravel", "MySQL", "Next.js", "Legacy Systems", "DB Admin"],
-    },
-    {
-        title: "Co-Founder & Software Engineer",
+        title: "Co-Fundador & Ingeniero de Software",
         company: "DevSoul",
-        location: "Tucumán, Argentina",
-        period: "Ene 2024 - Presente",
-        description: "Liderazgo técnico en el diseño de arquitecturas escalables. Desarrollo backend de la plataforma e-commerce 'Bronovios' (NestJS/Next.js) con integración de pasarelas de pago y automatización de marketing. Arquitectura de un ERP transaccional a medida enfocado en la optimización de inventario y ventas.",
-        tags: ["NestJS", "Next.js", "PostgreSQL", "Software Architecture", "ERP"],
+        location: "Tucumán, Argentina (Remoto)",
+        period: "Jul 2025 - Presente",
+        description: "Arquitectura y desarrollo Full-Stack de sistemas de gestión (ERP) a medida para el sector retail utilizando TypeScript, Next.js y NestJS. Centralización de logística, inventarios y flujos de ventas, e integración de plataformas de terceros (Brevo) para la automatización de correos y sincronización de datos.",
+        tags: ["Next.js", "NestJS", "TypeScript", "ERP", "API Integrations"],
     },
     {
-        title: "Software Engineer (Backend Focus)",
+        title: "Desarrollador de Software",
+        company: "Albertus S.A.S.",
+        location: "Yerba Buena, Tucumán, Argentina",
+        period: "Ago 2025 - Presente",
+        description: "Modernización del sistema central de reportes de la empresa, migrando operaciones críticas desde un entorno legacy (Delphi) hacia arquitecturas web escalables (Laravel/React). Resolución de cuellos de botella mediante optimización de consultas SQL (MySQL) y diseño de APIs RESTful robustas.",
+        tags: ["Laravel", "React", "MySQL", "Legacy Migration", "REST APIs"],
+    },
+    {
+        title: "Desarrollador Full-Stack",
         company: "Freelance",
         location: "Remoto / Tucumán",
-        period: "Ago 2024 - Presente",
-        description: "Diseño y desarrollo de Sistemas de Gestión (ERPs) para sectores inmobiliario, automotriz y salud. Construcción del motor financiero con Laravel para el cálculo dinámico de cuotas e intereses (Cron Jobs), aplicando estrictamente Arquitectura en Capas, Inyección de Dependencias y principios SOLID.",
-        tags: ["Laravel", "React", "SOLID", "Cron Jobs", "Clean Code"],
+        period: "May 2025 - Presente",
+        description: "Desarrollo del ciclo de vida completo de plataformas B2B y herramientas de gestión operativa. Construcción de motores financieros complejos con cálculo dinámico de cuotas (Cron Jobs) e integración de APIs externas, aplicando estrictamente Clean Code, Inyección de Dependencias y principios SOLID.",
+        tags: ["Laravel", "Next.js", "PostgreSQL", "Cron Jobs", "SOLID"],
     }
 ];
 
 const education = [
     {
         title: "Ingeniería en Sistemas de Información",
-        institution: "Universidad Tecnológica Nacional (UTN FRT)",
+        institution: "Universidad Tecnológica Nacional (UTN - FRT)",
         location: "Tucumán, Argentina",
-        period: "Cursando 4to año",
-        description: "Carrera de grado con enfoque principal en Arquitectura de Software, bases de datos, algoritmos, paradigmas de programación (OOP) y modelado de sistemas complejos.",
-        tags: ["Backend Architecture", "System Design", "OOP"],
+        period: "Mar 2022 - Presente",
+        description: "Cursando 4to año (Cursado avanzado). Carrera de grado con enfoque principal en Arquitectura de Software, bases de datos, algoritmos, paradigmas de programación (OOP) y modelado de sistemas complejos.",
+        tags: ["Software Architecture", "System Design", "OOP"],
     },
     {
         title: "Inglés - Nivel B2 (Upper Intermediate)",
@@ -46,33 +46,33 @@ const education = [
         location: "Tucumán, Argentina",
         period: "2023 - 2024",
         description: "Capacidad demostrada para la lectura fluida de documentación técnica, participación en Code Reviews, redacción profesional y comunicación oral en entornos de trabajo internacionales.",
-        tags: ["English B2", "Technical Reading", "Bilingual"],
+        tags: ["English B2", "Technical Communication", "Bilingual"],
     }
 ];
 
 const achievements = [
     {
-        category: "Innovación / IA",
         title: "AI-Powered Personal Finance Tracker",
-        institution: "Proyecto Personal",
+        subtitle: "Proyecto Personal | Innovación & IA",
         location: "Remoto",
-        date: "Oct 2025 - Presente",
+        period: "Oct 2025 - Presente",
         description: "Sistema automatizado de seguimiento financiero. Diseñé una arquitectura orientada a eventos con n8n para capturar datos e integré la API de Gemini (LLMs) para categorizar transacciones no estructuradas, sincronizando el flujo de datos en tiempo real.",
+        tags: ["n8n", "Gemini API", "Automation", "LLM Integration"]
     },
     {
-        category: "Hackathon",
         title: "Participante Destacado - n8n Hackathon",
-        institution: "Xetro",
-        location: "Tucumán",
-        date: "Ago 2025",
-        description: "Diseño e implementación de flujos de trabajo asíncronos y automatización de procesos de negocio utilizando n8n. El enfoque estuvo en resolver cuellos de botella operativos mediante la orquestación eficiente de APIs de terceros.",
+        subtitle: "Organizado por XETRO",
+        location: "Tucumán, Argentina",
+        period: "Ago 2025",
+        description: "Diseño e implementación de flujos de trabajo asíncronos y automatización de procesos utilizando n8n. El enfoque del proyecto estuvo en resolver cuellos de botella operativos mediante la orquestación eficiente de APIs de múltiples plataformas.",
+        tags: ["n8n", "API Integration", "Workflows", "Problem Solving"]
     }
 ];
 
 const tabs = [
-    { id: 'work', label: 'Work Experience', icon: Briefcase },
-    { id: 'education', label: 'Education', icon: GraduationCap },
-    { id: 'achievements', label: 'Achievements', icon: Award },
+    { id: 'work', label: 'Experiencia', icon: Briefcase },
+    { id: 'education', label: 'Educación', icon: GraduationCap },
+    { id: 'achievements', label: 'Logros & IA', icon: Award }, // Le agregué "& IA" para que llame la atención
 ];
 
 function TimelineItem({ title, subtitle, location, period, description, tags }) {
@@ -82,6 +82,7 @@ function TimelineItem({ title, subtitle, location, period, description, tags }) 
             <div className="absolute left-0 top-2 bottom-0 w-0.5 bg-border" />
             {/* Punto/círculo */}
             <div className="absolute left-[-4px] top-2 w-3 h-3 rounded-full bg-heading border-2 border-background" />
+
             {/* Tarjeta */}
             <div className="bg-surface border border-border rounded-2xl p-6 hover:border-primary/30 transition-colors">
                 {/* Header: título + fecha */}
@@ -95,7 +96,9 @@ function TimelineItem({ title, subtitle, location, period, description, tags }) 
                         <p>{location}</p>
                     </div>
                 </div>
+
                 <p className="text-body text-sm mb-4">{description}</p>
+
                 {/* Tags */}
                 {tags && tags.length > 0 && (
                     <div className="flex flex-wrap gap-2">
